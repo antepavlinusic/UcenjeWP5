@@ -7,9 +7,9 @@ go
 use legolas;
 
 create table kupci(
-sifra int primary key identity (1,1),
-ime varchar(40),
-prezime varchar(40),
+sifra int not null primary key identity (1,1),
+ime not null varchar(40),
+prezime not null varchar(40),
 adresa varchar(60),
 korisnicko_ime varchar(100),
 lozinka varchar(100)
@@ -24,7 +24,7 @@ datum datetime
 create table proizvodi(
 sifra int primary key identity (1,1),
 naziv varchar(100),
-cijena decimal(18,2),
+cijena  decimal(18,2),
 dostupno bit,
 kolicina int,
 kategorije varchar(100)
@@ -45,3 +45,6 @@ alter table kosarica add foreign key (kupci) references kupci (sifra);
 alter table stavke add foreign key (kosarica) references kosarica (sifra);
 
 alter table stavke add foreign key (proizvodi) references proizvodi (sifra);
+
+
+
