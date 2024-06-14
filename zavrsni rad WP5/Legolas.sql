@@ -16,13 +16,13 @@ lozinka varchar(100)
 );
 
 create table kosarica(
-sifra int primary key not null identity (1,1),
+sifra int not null primary key identity (1,1),
 kupci int not null,
 datum datetime
 );
 
 create table proizvodi(
-sifra int primary key not null identity (1,1),
+sifra int not null primary key identity (1,1),
 naziv varchar(100) not null,
 cijena  decimal(18,2)not null,
 dostupno bit,
@@ -33,7 +33,7 @@ kategorije varchar(100) not null
 
 
 create table stavke(
-sifra int primary key not null identity (1,1),
+sifra int not null primary key identity (1,1),
 kosarica int not null,
 proizvodi int not null
 );
